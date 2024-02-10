@@ -1,6 +1,7 @@
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 import junit.framework.TestCase;
+import org.openqa.selenium.ScreenOrientation;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 
@@ -28,6 +29,7 @@ public class CoreTestCase extends TestCase {
 
         String appiumURL = "http://127.0.0.1:4723/wd/hub";
         driver = new AndroidDriver(new URL(appiumURL), capabilities);
+        driver.rotate(ScreenOrientation.PORTRAIT);
     }
 
     @Override

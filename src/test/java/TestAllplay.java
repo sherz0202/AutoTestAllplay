@@ -1,4 +1,6 @@
+import com.beust.ah.A;
 import org.junit.Test;
+import org.openqa.selenium.ScreenOrientation;
 
 public class TestAllplay extends CoreTestCase {
     private RefactoringMethodsPageForAllplay Allplay;
@@ -25,6 +27,22 @@ public class TestAllplay extends CoreTestCase {
         //step5
         Allplay.SwipeDown();
         //step5
-
+        driver.rotate(ScreenOrientation.LANDSCAPE);
+        Allplay.CheckTheRotation();
+        //step6
+        Allplay.ClickSearchBtn();
+        //step7
+        Allplay.TypeSearchName();
+        driver.rotate(ScreenOrientation.PORTRAIT);
+        //step8
+        Allplay.ClickToFilm();
+        //step8
+        Allplay.CheckingTheFilm();
+        driver.navigate().back();
+        //step8
+        Allplay.ClearSearchInput();
+        //step8
+        Allplay.ClickToClearHistory();
+        Allplay.ClickBtnYes();
     }
 }
